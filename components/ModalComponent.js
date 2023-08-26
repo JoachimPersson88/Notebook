@@ -1,3 +1,5 @@
+//ModalComponent.js
+
 import React from 'react';
 import { Modal, View, Text, Button, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
