@@ -3,6 +3,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 
+// NoteItem komponenten representerar en enskild anteckning i listan.
+// Den tar fyra props: title, content, onPress och onDelete.
 const NoteItem = ({ title, content, onPress, onDelete }) => {
   return (
     <TouchableOpacity onPress={onPress}>

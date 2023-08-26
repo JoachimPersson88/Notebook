@@ -8,9 +8,10 @@ import NoteEditorScreen from './screens/NoteEditorScreen';
 
 const Stack = createStackNavigator();
 
+// Huvudkomponenten som styr navigationen i appen
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer>  
       <Stack.Navigator initialRouteName="NotesList">
         <Stack.Screen name="NotesList" component={NotesListScreen} />
         <Stack.Screen name="NoteEditor" component={NoteEditorScreen} />

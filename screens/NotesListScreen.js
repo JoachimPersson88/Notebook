@@ -2,17 +2,21 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
-import NoteItem from './NoteItem';  // Glöm inte importera NoteItem om det behövs
+import NoteItem from './NoteItem';
 
+// NotesListScreen är skärmen som visar en lista av anteckningar.
 const NotesListScreen = ({ route, navigation }) => {
+  // Håller en lokal state för anteckningarna
   const [notes, setNotes] = useState([]);
   
+  // Uppdatera anteckningarna när en ny anteckning läggs till.
   useEffect(() => {
     if (route.params?.newNote) {
       setNotes(prevNotes => [...prevNotes, route.params.newNote]);
     }
   }, [route.params?.newNote]);
 
+  // Funktion för att ta bort en anteckning baserat på dess index
   const deleteNote = (index) => {
     setNotes(prevNotes => {
       return prevNotes.filter((note, i) => i !== index);
@@ -32,6 +36,7 @@ const NotesListScreen = ({ route, navigation }) => {
           />
         )}
       />
+       {/* Knapp för att navigera till NoteEditorScreen för att skapa en ny anteckning */}
       <Button title="Lägg till Anteckning" onPress={() => navigation.navigate('NoteEditor')} />
     </View>
   );
